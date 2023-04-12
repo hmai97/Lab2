@@ -37,9 +37,12 @@ class BinarySearchTree{
    
    
    
-   /*
-   pre-order traversal
-   */
+   /**
+   * Performs pre-order traversal of the given binary tree rooted at the specified node,
+   * printing the value of each visited node in the order of root, left subtree, right subtree.
+   *
+   * @param root the root of the binary tree to traverse
+    */
    public void preOrderTraversal(Node root){
       if (root == null) {
          return;
@@ -52,8 +55,11 @@ class BinarySearchTree{
 
    
    
-   /*
-   in-order traversal
+   /**
+   * Performs in-order traversal of the given binary tree rooted at the specified node,
+   * printing the value of each visited node in the order of left subtree, root, right subtree.
+   *
+   * @param root the root of the binary tree to traverse
    */
    public void inOrderTraversal(Node root){
       if (root == null) {
@@ -67,8 +73,11 @@ class BinarySearchTree{
    
    
    
-   /*
-   post-order traversal
+   /**
+   * Performs post-order traversal of the given binary tree rooted at the specified node,
+   * printing the value of each visited node in the order of left subtree, right subtree, root.
+   *
+   * @param root the root of the binary tree to traverse
    */
    public void postOrderTraversal(Node root){
       if (root == null) {
@@ -82,9 +91,12 @@ class BinarySearchTree{
    
    
    
-   /*
-   a method to find the node in the tree
-   with a specific value
+   /**
+   * Searches the binary tree rooted at the specified node for a node with the given value.
+   *
+   * @param root the root of the binary tree to search
+   * @param key the value to search for
+   * @return true if a node with the given value is found, false otherwise
    */
    public boolean find(Node root, int key){
 	   if (root == null) {
@@ -102,9 +114,12 @@ class BinarySearchTree{
    
    
    
-   /*
-   a method to find the node in the tree
-   with a smallest key
+  /**
+    * Returns the smallest value in the binary tree rooted at the specified node.
+   *
+   * @param root the root of the binary tree to search
+   * @return the smallest value in the tree
+   * @throws IllegalArgumentException if the tree is empty
    */
    public int getMin(Node root){
       if (root == null) {
@@ -120,12 +135,23 @@ class BinarySearchTree{
   
   
   
-   /*
-   a method to find the node in the tree
-   with a largest key
+   /**
+   * Returns the largestt value in the binary tree rooted at the specified node.
+   *
+   * @param root the root of the binary tree to search
+   * @return the largest value in the tree
+   * @throws IllegalArgumentException if the tree is empty
    */
    public int getMax(Node root){
-	  //implement me
+	   if (root == null) {
+         throw new IllegalArgumentException("Tree is empty");
+      }
+      
+      while (root.right != null) {
+         root = root.right;
+      }
+      
+      return root.value;
    }
    
    
