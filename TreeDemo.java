@@ -107,7 +107,15 @@ class BinarySearchTree{
    with a smallest key
    */
    public int getMin(Node root){
-      //implement me
+      if (root == null) {
+         throw new IllegalArgumentException("Tree is empty");
+      }
+      
+      while (root.left != null) {
+         root = root.left;
+      }
+      
+      return root.value;
    }
   
   
