@@ -18,7 +18,7 @@ class BinarySearchTree{
    /*
    recursive insert method
    */
-   public Node insert(Node root, int value){
+   private Node insert(Node root, int value){
       //base case
       if(root == null){
          root = new Node(value);
@@ -34,8 +34,12 @@ class BinarySearchTree{
       
       return root;
    }
-   
-   
+   /**
+   * Insert method
+   */
+    public void insert(int value) {
+      root = insert(root, value);
+   }
    
    /**
    * Performs pre-order traversal of the given binary tree rooted at the specified node,
